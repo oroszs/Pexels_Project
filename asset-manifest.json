@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/Pexels_Project/static/js/main.369a3dcd.js",
+    "main.js": "/Pexels_Project/static/js/main.6eb7398f.js",
     "index.html": "/Pexels_Project/index.html",
-    "main.369a3dcd.js.map": "/Pexels_Project/static/js/main.369a3dcd.js.map"
+    "main.6eb7398f.js.map": "/Pexels_Project/static/js/main.6eb7398f.js.map"
   },
   "entrypoints": [
-    "static/js/main.369a3dcd.js"
+    "static/js/main.6eb7398f.js"
   ]
 }
