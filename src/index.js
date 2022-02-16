@@ -13,33 +13,30 @@ class App extends React.Component {
 class Images extends React.Component {
     constructor(props) {
         super(props);
-        const photoObj = {};
         this.state = {
-            photoObj: photoObj,
+            imgs: {},
         }
     }
 
-    componentDidMount() {
-        this.callApi();
-    }
     callApi() {
-        let photos;
-        getPhotos('Dog').then(data => {
-            photos = data.photos;
-            console.log(photos);
-        });
-        this.setState({
-            photoObj: photos,
+        getPhotos('Pug').then(data => {
+            let photos = data.photos;
+            this.setState({
+                imgs: photos,
+            });
         });
     }
     
+    componentDidMount(){
+        this.callApi();
+    }
 
     render() {
-        const pics = this.state.photoObj;
-        console.log(pics)
+        let imgs = this.state.imgs;
+        console.log(imgs);
         return(
             <div>
-                
+                {imgs[0] != undefined ? <img src={imgs[0].src.medium} alt='Blah'></img> : null}
             </div>
         );
     }
