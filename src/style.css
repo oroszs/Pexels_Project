@@ -37,7 +37,6 @@
 #searchButton {
     position: relative;
     flex: none;
-    margin: 10px;
     width: 35%;
     height: 25px;
     cursor: pointer;
