@@ -5,7 +5,9 @@ import Images from './images.js';
 class App extends React.Component {
     render() {
         return (
-            <Images />
+            <div id='wrapper'>
+                <Images />
+            </div>
         );
     }
 }
