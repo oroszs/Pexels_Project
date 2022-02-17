@@ -19,7 +19,7 @@ class Search extends React.Component {
     render() {
         return (
             <div className='componentDiv searchDiv'>
-                <input type='text' placeholder='Search For New Images' id='searchTextInput'></input>
+                <input type='text' placeholder='Search by keyword' id='searchTextInput'></input>
                 <button id='searchButton' onClick={() => this.search()}>Get Images</button>
             </div>
         );
