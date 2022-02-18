@@ -33,8 +33,13 @@ class App extends React.Component {
         return (
             <div id='wrapper'>
                 <Helmet>
-                    <title>Pexels Image Viewer</title>
+                    <meta charset='utf-8' />
                     <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1' />
+                    <title>Pexels Image Viewer</title>
+                    <meta property='og:title' content='Pexels Image App'/>
+                    <meta property='og:image' content='../public/pexels-image-viewer.jpg'/>
+                    <meta property='og:description' content='Image Viewing App utilizing the Pexels API'/>
+                    <meta property='og:url' content='https://oroszs.github.io/Pexels_Project/'/>
                 </Helmet>
                 <Images images={images? images: undefined}/>
                 <Search callApi={this.callApi}/>
