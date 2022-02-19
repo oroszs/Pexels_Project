@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Pexels_Project/static/css/main.9b936faf.css",
+    "main.css": "/Pexels_Project/static/css/main.2ea6d299.css",
     "main.js": "/Pexels_Project/static/js/main.fc4eab50.js",
     "index.html": "/Pexels_Project/index.html",
-    "main.9b936faf.css.map": "/Pexels_Project/static/css/main.9b936faf.css.map",
+    "main.2ea6d299.css.map": "/Pexels_Project/static/css/main.2ea6d299.css.map",
     "main.fc4eab50.js.map": "/Pexels_Project/static/js/main.fc4eab50.js.map"
   },
   "entrypoints": [
-    "static/css/main.9b936faf.css",
+    "static/css/main.2ea6d299.css",
     "static/js/main.fc4eab50.js"
   ]
 }
