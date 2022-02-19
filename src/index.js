@@ -38,7 +38,7 @@ class App extends React.Component {
                     <meta name='description' content='Image Viewing App utilizing the Pexels API'/>
                     <meta name='title' property='og:title' content = 'Pexels Image App'/>
                     <meta property='og:type' content='Website'/>
-                    <meta name='image' property='og:image' content='https://github.com/oroszs/Pexels_Project/blob/26eb5a1b41a46407f3458f39068712464edffe4f/public/pexels-image-viewer-screenshot.jpg'/>
+                    <meta name='image' property='og:image' content='https://live.staticflickr.com/65535/51890286806_0e3ac35264_k.jpg'/>
                     <meta name='description' property='og:description' content='Image Viewing App utilizing the Pexels API'/>
                     <meta name='author' content='Sean Orosz' />
                 </Helmet>
