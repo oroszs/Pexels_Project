@@ -7,18 +7,22 @@ class Images extends React.Component {
     }
 
     arrangePhotos(){
+        let currentPage = this.props.currentPage;
+        let startingIndex  = (currentPage - 1) * 10;
         let imgTagArray = [];
         let imageObj = this.props.images;
         if(imageObj.length > 9){
             let imageArray = imageObj.map(image => image.src.medium);
-            let lowIndex = 0;
-            let highIndex = 10;
+            let lowIndex = startingIndex;
+            let highIndex = startingIndex + 10;
             for(let imageIndex = lowIndex; imageIndex < highIndex; imageIndex++){
-                imgTagArray.push(
-                    <div key={imageIndex} className='thumbnailDiv'>
-                        <img className='thumbnail' src={imageArray[imageIndex]} alt='fail'></img>
-                    </div>
-                );
+                if(imageArray[imageIndex]) {
+                    imgTagArray.push(
+                        <div key={imageIndex} className='thumbnailDiv'>
+                            <img className='thumbnail' src={imageArray[imageIndex]} alt='Failed to load image...'></img>
+                        </div>
+                    );
+                }
             }
             return (
                 <div className='thumbnailDivHolder componentDiv'>{imgTagArray}</div>
@@ -29,6 +33,13 @@ class Images extends React.Component {
             );
         }
 
+    }
+
+    componentDidUpdate() {
+        const imageDiv = document.querySelector('.thumbnailDivHolder');
+        if(imageDiv){
+            imageDiv.scrollTo(0,0);
+        }
     }
 
     render() {

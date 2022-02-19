@@ -9,11 +9,9 @@ class Search extends React.Component {
     search(){
         const callApi = this.props.callApi;
         const searchTextElement = document.querySelector('#searchTextInput');
-        const imageDiv = document.querySelector('.thumbnailDivHolder');
-        imageDiv.scrollTo(0,0);
         callApi(searchTextElement.value);
         searchTextElement.value = '';
-        
+        this.props.resetPageNumber();
     }
 
     render() {
