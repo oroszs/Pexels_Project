@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import Images from './images.js';
 import Search from './search.js';
 import getPhotos from './service.js';
-import Helmet from 'react-helmet';
 
 class App extends React.Component {
 
@@ -32,16 +31,6 @@ class App extends React.Component {
         let images = this.state.images;
         return (
             <div id='wrapper'>
-                <Helmet>
-                    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1' />
-                    <title>Pexels Image Viewer</title>
-                    <meta name='description' content='Image Viewing App utilizing the Pexels API'/>
-                    <meta name='title' property='og:title' content = 'Pexels Image App'/>
-                    <meta property='og:type' content='Website'/>
-                    <meta name='image' property='og:image' content='https://live.staticflickr.com/65535/51890286806_0e3ac35264_k.jpg'/>
-                    <meta name='description' property='og:description' content='Image Viewing App utilizing the Pexels API'/>
-                    <meta name='author' content='Sean Orosz' />
-                </Helmet>
                 <Images images={images? images: undefined}/>
                 <Search callApi={this.callApi}/>
             </div>
