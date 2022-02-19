@@ -80,10 +80,10 @@
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
-    padding: 10px;
     position: relative;
     flex: none;
     overflow-y: auto;
+    padding: 10px;
 }
 .thumbnailDiv {
     width: 250px;
@@ -124,5 +124,7 @@
         flex-wrap: nowrap;
         justify-content: flex-start;
         align-items: center;
+        overflow: hidden;
+        overflow-x: auto;
     }
 }
