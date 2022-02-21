@@ -158,8 +158,8 @@
     .thumbnailDivHolder{
         width: calc(250px + 5vh);
         height: calc(250px + 5vh);
+        justify-content: space-between;
         flex-wrap: nowrap;
-        justify-content: flex-start;
         align-items: center;
         overflow: hidden;
         overflow-x: auto;
