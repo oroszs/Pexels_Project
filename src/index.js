@@ -12,11 +12,13 @@ class App extends React.Component {
         super(props);
         this.state = {
             images: undefined,
+            imageObj: undefined,
             currentPage: 1,
         }
         this.callApi = this.callApi.bind(this);
         this.pageClick = this.pageClick.bind(this);
         this.resetPageNumber = this.resetPageNumber.bind(this);
+        this.getImageInfo = this.getImageInfo.bind(this);
     }
 
     componentDidMount(){
@@ -40,6 +42,12 @@ class App extends React.Component {
         });
     }
 
+    getImageInfo(imageObj){
+        this.setState({
+            imageObj: imageObj,
+        });
+    }
+
     resetPageNumber() {
         this.setState({
             currentPage: 1,
@@ -49,10 +57,11 @@ class App extends React.Component {
     render() {
         let images = this.state.images;
         let currentPage = this.state.currentPage;
+        let imageObj = this.state.imageObj;
         return (
             <div id='wrapper'>
-                <Modal />
-                <Images images={images? images : undefined} currentPage={currentPage} />
+                <Modal imageObj={imageObj? imageObj : undefined} getImageInfo={this.getImageInfo}/>
+                <Images images={images? images : undefined} currentPage={currentPage} getImageInfo={this.getImageInfo}/>
                 <Pages numOfImages={images? images.length : 0} pageClick={this.pageClick} currentPage={currentPage}/>
                 <Search callApi={this.callApi} resetPageNumber={this.resetPageNumber}/>
             </div>

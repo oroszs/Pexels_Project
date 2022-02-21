@@ -12,14 +12,17 @@
     padding: 10px;
 }
 #modalBG {
-    display: none;
+    display: block;
     position: fixed;
-    width: 100vw;
-    height: 100vh;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
     z-index: 1;
     background-color: rgba(110, 110, 110, 0.74);
 }
 #modalWrapper {
+    display: block;
     background-color: white;
     position: fixed;
     transform: translate(-50%, -50%);
@@ -29,11 +32,9 @@
     height: fit-content;
     padding: 10px;
     border-radius: 20px;
-    display: flex;
-    align-content: center;
 }
 #modal{
-    flex: none;
+    display: block;
     position: relative;
     margin: auto;
     z-index: 2;
