@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Modal from './modal.js';
 import Images from './images.js';
 import Pages from './pages.js';
 import Search from './search.js';
@@ -24,10 +25,12 @@ class App extends React.Component {
 
     callApi(query) {
         getPhotos(query).then(data => {
-            let photos = data.photos;
-            this.setState({
-                images: photos,
-            });
+            if(data) {
+                let photos = data.photos;
+                this.setState({
+                    images: photos,
+                });
+            }
         });
     }
 
@@ -48,6 +51,7 @@ class App extends React.Component {
         let currentPage = this.state.currentPage;
         return (
             <div id='wrapper'>
+                <Modal />
                 <Images images={images? images : undefined} currentPage={currentPage} />
                 <Pages numOfImages={images? images.length : 0} pageClick={this.pageClick} currentPage={currentPage}/>
                 <Search callApi={this.callApi} resetPageNumber={this.resetPageNumber}/>

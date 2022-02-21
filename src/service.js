@@ -11,9 +11,11 @@ const getPhotos = async (query) => {
         if(response.status == 200) {
             let jsonObj = await response.json();
             return jsonObj;
+        } else {
+            console.log(response);
         }
     } catch(err) {
-        alert(err);
+        console.log(err);
     }
 }
 

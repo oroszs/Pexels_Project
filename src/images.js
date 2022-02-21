@@ -6,6 +6,22 @@ class Images extends React.Component {
         super(props);
     }
 
+    getImageInfo(imageObj) {
+        let modalBG = document.querySelector('#modalBG');
+        modalBG.style.display='block';
+        let modal = document.querySelector('#modal');
+        modal.src=imageObj.src.original;
+        if(imageObj.width > imageObj.height && window.screen.width > 450) {
+            if(imageObj.height > window.screen.height) {
+                modal.style.width = '60vw';
+                modal.style.height = 'auto';
+            } else {
+                modal.style.width = '85vw';
+                modal.style.height = 'auto';
+            }
+        }
+    }
+
     arrangePhotos(){
         let currentPage = this.props.currentPage;
         let startingIndex  = (currentPage - 1) * 10;
@@ -18,7 +34,7 @@ class Images extends React.Component {
             for(let imageIndex = lowIndex; imageIndex < highIndex; imageIndex++){
                 if(imageArray[imageIndex]) {
                     imgTagArray.push(
-                        <div key={imageIndex} className='thumbnailDiv'>
+                        <div key={imageIndex} className='thumbnailDiv' onClick={() => this.getImageInfo(imageObj[imageIndex])}>
                             <img className='thumbnail' src={imageArray[imageIndex]} alt='Failed to load image...'></img>
                         </div>
                     );
