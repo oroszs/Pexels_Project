@@ -38,21 +38,17 @@ class Modal extends React.Component{
             let modalSrc = imageObj.src.original;
             waitForImageLoad(modalSrc).then((img) => {
                 img.className = 'modal';
-                let alteredWidth;
-                let alteredHeight;
-                if(imageObj.width > imageObj.height && window.screen.width > 450) {
-                    if(imageObj.height > window.screen.height) {
-                        alteredWidth = 'auto';
-                        alteredHeight = '85vh';
-                    } else {
-                        alteredWidth = '85vw';
-                        alteredHeight = 'auto';
-                    }
+                let alteredWidth, alteredHeight;
+                let landscapeScreen = window.screen.width > window.screen.height;
+                if(landscapeScreen) {
+                    alteredWidth = 'auto';
+                    alteredHeight = '85vh';
+                } else {
+                    alteredWidth = '85vw';
+                    alteredHeight = 'auto';
                 }
-                if(alteredWidth || alteredHeight) {
-                    img.style.width = alteredWidth;
-                    img.style.height = alteredHeight;
-                }
+                img.style.width = alteredWidth;
+                img.style.height = alteredHeight;
                 date = new Date();
                 endTime = date.getTime();
                 loadTime = (endTime - startTime) / 1000;

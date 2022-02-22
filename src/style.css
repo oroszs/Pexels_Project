@@ -50,8 +50,6 @@
     position: relative;
     margin: auto;
     z-index: 2;
-    width: 85vw;
-    height: auto;
     border-radius: 10px;
 }
 .componentDiv{
