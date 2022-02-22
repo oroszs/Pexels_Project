@@ -4,6 +4,8 @@ import './style.css';
 class Search extends React.Component {
     constructor(props) {
         super(props);
+        this.search = this.search.bind(this);
+        this.searchWithEnterKey = this.searchWithEnterKey.bind(this);
     }
 
     search(){
@@ -14,11 +16,20 @@ class Search extends React.Component {
         this.props.resetPageNumber();
     }
 
+    searchWithEnterKey(keyCode) {
+        if(keyCode.which === 13) {
+            this.search();
+        }
+    }
+    componentDidMount(){
+        document.addEventListener('keydown', this.searchWithEnterKey);
+    }
+
     render() {
         return (
             <div className='componentDiv searchDiv'>
-                <input type='text' placeholder='Search by keyword' id='searchTextInput'></input>
-                <button id='searchButton' onClick={() => this.search()}>Get Images</button>
+                <input type='text' placeholder='Enter Keyword' id='searchTextInput'></input>
+                <button id='searchButton' onClick={() => this.search()}>Search</button>
             </div>
         );
     }

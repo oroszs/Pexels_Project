@@ -25,18 +25,26 @@ class App extends React.Component {
         this.callApi();
     }
 
+    resetScrollPosition(){
+        const imageDiv = document.querySelector('.thumbnailDivHolder');
+        if(imageDiv){
+            imageDiv.scrollTo(0,0);
+        }
+    }
+
     callApi(query) {
         getPhotos(query).then(data => {
             if(data) {
                 let photos = data.photos;
                 this.setState({
                     images: photos,
-                });
+                }, this.resetScrollPosition());
             }
         });
     }
 
     pageClick(page){
+        this.resetScrollPosition();
         this.setState({
             currentPage: page,
         });

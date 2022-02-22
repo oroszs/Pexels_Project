@@ -13,7 +13,7 @@ class Images extends React.Component {
         let imageObj = this.props.images;
         const getImageInfo = this.props.getImageInfo;
         if(imageObj.length > 9){
-            let imageArray = imageObj.map(image => image.src.medium);
+            let imageArray = imageObj.map(image => image.src.large);
             let lowIndex = startingIndex;
             let highIndex = startingIndex + 10;
             for(let imageIndex = lowIndex; imageIndex < highIndex; imageIndex++){
@@ -34,13 +34,6 @@ class Images extends React.Component {
             );
         }
 
-    }
-
-    componentDidUpdate() {
-        const imageDiv = document.querySelector('.thumbnailDivHolder');
-        if(imageDiv){
-            imageDiv.scrollTo(0,0);
-        }
     }
 
     render() {
