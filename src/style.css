@@ -43,15 +43,15 @@
     }
 }
 .fadeIn {
-    animation: .1s ease-in 0s 1 fadeIn;
+    animation: .3s ease-in 0s 1 fadeIn;
 }
 .modal{
     display: block;
     position: relative;
     margin: auto;
     z-index: 2;
-    width: auto;
-    height: 85vh;
+    width: 85vw;
+    height: auto;
     border-radius: 10px;
 }
 .componentDiv{
