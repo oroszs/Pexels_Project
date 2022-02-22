@@ -1,6 +1,12 @@
 import React from 'react';
 
 class Modal extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            orientation: 'Portrait',
+        }
+    }
 
     hideModal(){
         let bg = document.querySelector('#modalBG');
@@ -15,6 +21,10 @@ class Modal extends React.Component{
                 </div>
             </div>
         );
+    }
+
+    componentDidMount() {
+        window.screen.orientation.onchange = (() => this.adjustModal());
     }
 
     componentDidUpdate() {
@@ -41,31 +51,28 @@ class Modal extends React.Component{
                 console.log(`Loaded in ${loadTime} Seconds`);
                 modalWrapper.appendChild(img);
                 modalWrapper.style.display = 'block';
+                this.adjustModal();
                 modalWrapper.className = 'fadeIn';
-                this.adjustModalSize();
             });
         }
     }
 
-    adjustModalSize() {
-        let alteredWidth, alteredHeight;
-        let landscapeScreen = window.screen.width > window.screen.height;
-        let modal = document.querySelector('.modal');
-        if(modal) {
-            if(landscapeScreen) {
-                alteredWidth = 'auto';
-                alteredHeight = '85vh';
-            } else {
-                alteredWidth = '85vw';
-                alteredHeight = 'auto';
-            }
-            modal.style.width = alteredWidth;
-            modal.style.height = alteredHeight;
-        }
+    getOrientation() {
+        return window.screen.availHeight > window.screen.availWidth ? 'Portrait' : 'Landscape';
     }
 
-    componentDidMount() {
-        window.screen.orientation.onchange = () => this.adjustModalSize();
+    adjustModal(){
+        const orientation = this.getOrientation();
+        let modal = document.querySelector('.modal');
+        if(modal) {
+            if(orientation === 'Landscape') {
+                modal.style.width = 'auto';
+                modal.style.height = '85vh';
+            } else {
+                modal.style.width = '85vw';
+                modal.style.height = 'auto';
+            }
+        }
     }
 
     render(){
