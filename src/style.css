@@ -137,14 +137,14 @@
 }
 @media (orientation: portrait) {
     .modal {
-        width: 85%;
+        width: 80%;
         height: auto;
     }
 }
 @media (orientation: landscape) {
     .modal {
         width: auto;
-        height: 85%;
+        height: 80%;
     }
 }
 @media screen and (max-width: 1300px) {
