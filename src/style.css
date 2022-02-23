@@ -13,7 +13,10 @@
     padding: 10px;
 }
 #modalBG {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     left: 0px;
     right: 0px;
@@ -21,18 +24,6 @@
     bottom: 0px;
     z-index: 1;
     background-color: rgba(110, 110, 110, 0.74);
-}
-#modalWrapper {
-    display: none;
-    background-color: white;
-    position: fixed;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    top: 50%;
-    width: fit-content;
-    height: fit-content;
-    padding: 15px;
-    border-radius: 20px;
 }
 @keyframes fadeIn {
     0% {
@@ -46,11 +37,14 @@
     animation: .3s ease-in 0s 1 fadeIn;
 }
 .modal{
-    display: block;
+    display: none;
     position: relative;
+    transform:translateZ(0);
+    flex: none;
     margin: auto;
     z-index: 2;
     border-radius: 10px;
+    border: white solid 15px;
 }
 .componentDiv{
     background-color: white;
@@ -141,7 +135,18 @@
     height: 100%;
     object-fit: cover;
 }
-
+@media (orientation: portrait) {
+    .modal {
+        width: 85%;
+        height: auto;
+    }
+}
+@media (orientation: landscape) {
+    .modal {
+        width: auto;
+        height: 85%;
+    }
+}
 @media screen and (max-width: 1300px) {
     .thumbnailDivHolder {
         height: 74vh;

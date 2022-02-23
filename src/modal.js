@@ -1,12 +1,6 @@
 import React from 'react';
 
 class Modal extends React.Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            orientation: 'Portrait',
-        }
-    }
 
     hideModal(){
         let bg = document.querySelector('#modalBG');
@@ -17,19 +11,13 @@ class Modal extends React.Component{
     modal(){
         return (
             <div id='modalBG' onClick={() => this.hideModal()}>
-                <div id='modalWrapper'>
-                </div>
             </div>
         );
     }
 
-    componentDidMount() {
-        window.screen.orientation.onchange = (() => this.adjustModal());
-    }
-
     componentDidUpdate() {
         let imageObj = this.props.imageObj;
-        let modalWrapper = document.querySelector('#modalWrapper');
+        let modalBG = document.querySelector('#modalBG');
         let loadTime, startTime, endTime, date;
         if(imageObj){
             const waitForImageLoad = (src) => {
@@ -49,31 +37,13 @@ class Modal extends React.Component{
                 endTime = date.getTime();
                 loadTime = (endTime - startTime) / 1000;
                 console.log(`Loaded in ${loadTime} Seconds`);
-                modalWrapper.appendChild(img);
-                modalWrapper.style.display = 'block';
-                this.adjustModal();
-                modalWrapper.className = 'fadeIn';
+                modalBG.appendChild(img);
+                img.style.display = 'block';
+                img.className += ' fadeIn';
             });
         }
     }
 
-    getOrientation() {
-        return window.screen.availHeight > window.screen.availWidth ? 'Portrait' : 'Landscape';
-    }
-
-    adjustModal(){
-        const orientation = this.getOrientation();
-        let modal = document.querySelector('.modal');
-        if(modal) {
-            if(orientation === 'Landscape') {
-                modal.style.width = 'auto';
-                modal.style.height = '85vh';
-            } else {
-                modal.style.width = '85vw';
-                modal.style.height = 'auto';
-            }
-        }
-    }
 
     render(){
         let imageObj = this.props.imageObj;
