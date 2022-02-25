@@ -1,4 +1,5 @@
 import React from 'react';
+import Loading from './loading.js';
 import './style.css';
 
 class Images extends React.Component {
@@ -26,11 +27,11 @@ class Images extends React.Component {
                 }
             }
             return (
-                <div className='thumbnailDivHolder componentDiv'>{imgTagArray}</div>
+                <div className='fadeIn thumbnailDivHolder componentDiv'>{imgTagArray}</div>
             );
         } else {
             return (
-                <div className='thumbnailDivHolder componentDiv'><h2>No Results Found...</h2></div>
+                <div className='fadeIn thumbnailDivHolder componentDiv'><h2>No Results Found...</h2></div>
             );
         }
 
@@ -40,7 +41,7 @@ class Images extends React.Component {
         let imgs = this.props.images;
         return(
             <div>
-                {imgs ? this.arrangePhotos() : null}
+                {imgs ? this.arrangePhotos() : <Loading />}
             </div>
         );
     }

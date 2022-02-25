@@ -1,5 +1,5 @@
 import React from 'react';
-import loadingImage from './load-icon.png';
+import Loading from './loading.js';
 
 class Modal extends React.Component{
 
@@ -12,9 +12,7 @@ class Modal extends React.Component{
     modal(){
         return (
             <div id='modalBG' onClick={() => this.hideModal()}>
-                <div id='loadingDiv'><span id='loadText'>Loading...</span>
-                    <img id='loadingIcon' className='spin' src={loadingImage} alt='loading'></img>
-                </div>
+                <Loading />
             </div>
         );
     }

@@ -69,7 +69,7 @@ class App extends React.Component {
         return (
             <div id='wrapper'>
                 <Modal imageObj={imageObj? imageObj : undefined} getImageInfo={this.getImageInfo}/>
-                <Images images={images? images : undefined} currentPage={currentPage} getImageInfo={this.getImageInfo}/>
+                <Images images={images? images : null} currentPage={currentPage} getImageInfo={this.getImageInfo}/>
                 <Pages numOfImages={images? images.length : 0} pageClick={this.pageClick} currentPage={currentPage}/>
                 <Search callApi={this.callApi} resetPageNumber={this.resetPageNumber}/>
             </div>
