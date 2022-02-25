@@ -1,4 +1,5 @@
 import React from 'react';
+import loadingImage from './load-icon.png';
 
 class Modal extends React.Component{
 
@@ -11,6 +12,9 @@ class Modal extends React.Component{
     modal(){
         return (
             <div id='modalBG' onClick={() => this.hideModal()}>
+                <div id='loadingDiv'><span id='loadText'>Loading...</span>
+                    <img id='loadingIcon' className='spin' src={loadingImage} alt='loading'></img>
+                </div>
             </div>
         );
     }
@@ -18,6 +22,7 @@ class Modal extends React.Component{
     componentDidUpdate() {
         let imageObj = this.props.imageObj;
         let modalBG = document.querySelector('#modalBG');
+        let loadingDiv = document.querySelector('#loadingDiv');
         let loadTime, startTime, endTime, date;
         if(imageObj){
             const waitForImageLoad = (src) => {
@@ -35,11 +40,14 @@ class Modal extends React.Component{
                 img.className = 'modal';
                 date = new Date();
                 endTime = date.getTime();
+                loadingDiv.className += ' fadeOut';
                 loadTime = (endTime - startTime) / 1000;
                 console.log(`Loaded in ${loadTime} Seconds`);
                 modalBG.appendChild(img);
-                img.style.display = 'block';
-                img.className += ' fadeIn';
+                setTimeout(() => {                
+                    img.style.display = 'block';
+                    img.className += ' fadeIn';
+                }, 300);
             });
         }
     }
