@@ -119,7 +119,7 @@
 }
 #paginateDiv {
     width: 30vw;
-    height: 5vh;
+    height: 6vh;
     position: relative;
     flex: none;
     display: flex;
@@ -238,5 +238,25 @@
         display: flex;
         justify-content: space-between;
         margin-bottom: 100px;
+    }
+}
+@media screen and (max-height: 600px) {
+    .thumbnailDivHolder {
+        height: 65vh;
+    }
+}
+@media screen and (max-height: 400px) {
+    .thumbnailDivHolder {
+        height: 210px;
+    }
+    .thumbnailDiv {
+        width: 200px;
+        height: 200px;
+    }
+    .componentDiv {
+        margin:  5px;
+    }
+    .searchDiv{
+        height: 30px;
     }
 }
