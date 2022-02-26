@@ -20,8 +20,10 @@ class Images extends React.Component {
             for(let imageIndex = lowIndex; imageIndex < highIndex; imageIndex++){
                 if(imageArray[imageIndex]) {
                     imgTagArray.push(
-                        <div key={imageIndex} className='thumbnailDiv' onClick={() => getImageInfo(imageObj[imageIndex])}>
-                            <img className='thumbnail' src={imageArray[imageIndex]} alt='Failed to load image...'></img>
+                        <div key={imageIndex} className='thumbnailDivWrapper'>
+                            <div className='thumbnailDiv' onClick={() => getImageInfo(imageObj[imageIndex])}>
+                                <img className='thumbnail' src={imageArray[imageIndex]} alt='Failed to load image...'></img>
+                            </div>
                         </div>
                     );
                 }

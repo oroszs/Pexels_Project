@@ -4,16 +4,12 @@ import Loading from './loading.js';
 class Modal extends React.Component{
 
     hideModal(){
-        let thumbnailHolder = document.querySelector('.thumbnailDivHolder');
-        thumbnailHolder.style.overflowX = 'auto';
         let bg = document.querySelector('#modalBG');
         bg.style.display = 'none';
         this.props.getImageInfo();
     }
 
     modal(){
-        let thumbnailHolder = document.querySelector('.thumbnailDivHolder');
-        thumbnailHolder.style.overflowX = 'none';
         return (
             <div id='modalBG' onClick={() => this.hideModal()}>
                 <Loading />
