@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Modal from './modal.js';
-import Images from './images.js';
-import Pages from './pages.js';
-import Search from './search.js';
-import getPhotos from './service.js';
+import Modal from './components/modal.js';
+import Images from './components/images.js';
+import Pages from './components/pages.js';
+import Search from './components/search.js';
+import getPhotos from './utils/service.js';
 
 class App extends React.Component {
 
@@ -44,10 +44,9 @@ class App extends React.Component {
     }
 
     pageClick(page){
-        this.resetScrollPosition();
         this.setState({
             currentPage: page,
-        });
+        }, this.resetScrollPosition());
     }
 
     getImageInfo(imageObj){
@@ -72,6 +71,7 @@ class App extends React.Component {
                 <Images images={images? images : null} currentPage={currentPage} getImageInfo={this.getImageInfo}/>
                 <Pages numOfImages={images? images.length : 0} pageClick={this.pageClick} currentPage={currentPage}/>
                 <Search callApi={this.callApi} resetPageNumber={this.resetPageNumber}/>
+
             </div>
         );
     }

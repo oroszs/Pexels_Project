@@ -1,6 +1,6 @@
 import React from 'react';
 import Loading from './loading.js';
-import './style.css';
+import '../stylesheets/style.css';
 
 class Images extends React.Component {
     constructor(props) {

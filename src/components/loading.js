@@ -1,5 +1,5 @@
 import React from 'react';
-import loadingImage from './load-icon.png';
+import loadingImage from '../images/load-icon.png';
 
 class Loading extends React.Component {
 

@@ -116,6 +116,7 @@
     width: 50vw;
     height: 40px;
     font-size: 16px;
+    bottom: 2%;
 }
 #paginateDiv {
     width: 30vw;
@@ -126,6 +127,7 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    bottom: 5%;
 }
 .activePageNumber {
     cursor: pointer;
@@ -167,7 +169,7 @@
 }
 .thumbnailDivHolder{
     width: 90vw;
-    height: 80%;
+    height: 75%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -231,13 +233,11 @@
     }
 }
 @media screen and (max-width: 400px) {
-    .componentDiv {
-        margin-top: 20px;
-    }
-    #paginateDiv{
-        width: 70vw;
+    #wrapper{
+        justify-content: space-around;
     }
     .thumbnailDivHolder{
+        position: relative;
         width: calc(250px + 5vh);
         height: calc(250px + 5vh);
         flex-wrap: nowrap;
@@ -246,28 +246,41 @@
         overflow-x: auto;
         display: flex;
         justify-content: space-between;
-        top: 10%;
-        transform: translate(-50%, -10%);
-    }
-}
-@media screen and (max-height: 600px) {
-    .thumbnailDivHolder {
-        position: absolute;
-        top: 0;
-        left: 50%;
         transform: translate(-50%, 0);
-        height: 65%;
+    }
+    #paginateDiv{
+        bottom: 6%;
+        width: 60vw;
+    }
+    .searchDiv{
+        bottom: 5%;
+    }
+    .componentDiv{
+        margin-top: 0px;
     }
 }
 @media screen and (max-height: 450px) {
     .thumbnailDiv {
         width: 200px;
         height: 200px;
+        margin: 5px;
     }
     .componentDiv {
         margin:  5px;
     }
     .searchDiv{
-        height: 30px;
+        height: 35px;
+    }
+    #paginateDiv{
+        height: 7vh;
+    }
+    .pageNumber {
+        width: 6vh;
+        height: 6vh;
+        line-height: 6vh;
+    }
+    .thumbnailDivHolder {
+        height: 64%;
+        padding: 5px;
     }
 }
