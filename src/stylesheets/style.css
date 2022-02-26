@@ -242,8 +242,8 @@
     }
     .thumbnailDivHolder{
         position: relative;
-        width: calc(250px + 5vh);
-        height: calc(250px + 5vh);
+        width: calc(250px + 3vh);
+        height: calc(250px + 3vh);
         flex-wrap: nowrap;
         align-items: center;
         overflow: hidden;
@@ -251,6 +251,7 @@
         display: flex;
         justify-content: space-between;
         transform: translate(-50%, 0);
+        padding: 15px;
     }
     #paginateDiv{
         bottom: 6%;
