@@ -18,8 +18,11 @@ class Pages extends React.Component {
     }
 
     render() {
+        let numOfImages = this.props.numOfImages;
         return (
-            <div id='paginateDiv' className='componentDiv'>{this.paginate()}</div>
+            <div>
+                {numOfImages > 0 ? <div id='paginateDiv' className='componentDiv'>{this.paginate()}</div> : null}
+            </div>
         );
     }
 

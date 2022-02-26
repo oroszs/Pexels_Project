@@ -7,6 +7,7 @@ class Modal extends React.Component{
         let bg = document.querySelector('#modalBG');
         bg.style.display = 'none';
         this.props.getImageInfo();
+        this.props.setScrollPosition();
     }
 
     modal(){

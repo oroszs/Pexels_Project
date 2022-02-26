@@ -13,12 +13,14 @@ class App extends React.Component {
         this.state = {
             images: undefined,
             imageObj: undefined,
+            scrollPosition: undefined,
             currentPage: 1,
         }
         this.callApi = this.callApi.bind(this);
         this.pageClick = this.pageClick.bind(this);
         this.resetPageNumber = this.resetPageNumber.bind(this);
         this.getImageInfo = this.getImageInfo.bind(this);
+        this.setScrollPosition = this.setScrollPosition.bind(this);
     }
 
     componentDidMount(){
@@ -50,9 +52,27 @@ class App extends React.Component {
     }
 
     getImageInfo(imageObj){
+        this.getScrollPosition();
         this.setState({
             imageObj: imageObj,
         });
+    }
+
+    getScrollPosition() {
+        let thumbnailHolder = document.querySelector('.thumbnailDivHolder');
+        let scrollCoords = [];
+        scrollCoords.push(thumbnailHolder.scrollLeft);
+        scrollCoords.push(thumbnailHolder.scrollTop);
+        this.setState({
+            scrollPosition: scrollCoords,
+        });
+    }
+
+    setScrollPosition() {
+        let thumbnailHolder = document.querySelector('.thumbnailDivHolder');
+        let scrollCoords = this.state.scrollPosition;
+        thumbnailHolder.scrollLeft = scrollCoords[0];
+        thumbnailHolder.scrollTop = scrollCoords[1];
     }
 
     resetPageNumber() {
@@ -67,7 +87,7 @@ class App extends React.Component {
         let imageObj = this.state.imageObj;
         return (
             <div id='wrapper'>
-                <Modal imageObj={imageObj? imageObj : undefined} getImageInfo={this.getImageInfo}/>
+                <Modal imageObj={imageObj? imageObj : undefined} getImageInfo={this.getImageInfo} setScrollPosition={this.setScrollPosition}/>
                 <Images images={images? images : null} currentPage={currentPage} getImageInfo={this.getImageInfo}/>
                 <Pages numOfImages={images? images.length : 0} pageClick={this.pageClick} currentPage={currentPage}/>
                 <Search callApi={this.callApi} resetPageNumber={this.resetPageNumber}/>
