@@ -11,6 +11,7 @@
     align-items: center;
     justify-content: flex-end;
     padding: 10px;
+    padding-bottom: 2%;
 }
 #modalBG {
     display: flex;
@@ -104,7 +105,7 @@
     background-color: white;
     border-radius: 10px;
     box-shadow: grey 20px 20px 20px;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 .searchDiv {
     position: relative;
@@ -116,7 +117,6 @@
     width: 50vw;
     height: 40px;
     font-size: 16px;
-    bottom: 2%;
 }
 #paginateDiv {
     width: 30vw;
@@ -127,7 +127,6 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    bottom: 5vh;
 }
 .activePageNumber {
     cursor: pointer;
@@ -200,6 +199,15 @@
     height: 100%;
     object-fit: cover;
 }
+#pexelsIconDiv {
+    right: 2%;
+    bottom: 2%;
+    position: absolute;
+}
+#pexelsIconImg {
+    width: 75px;
+    height: auto;
+}
 @media (orientation: portrait) {
     .modal {
         width: 80%;
@@ -217,14 +225,6 @@
         height: 74vh;
     }
 }
-@media screen and (max-width: 600px) {
-    .thumbnailDivHolder{
-        width: calc(250px + 5vh);
-    }
-    #paginateDiv {
-        width: 50vw;
-    }
-}
 @media screen and (max-width: 500px) {
     .searchDiv {
         width: 90%;
@@ -236,7 +236,7 @@
         height: auto;
     }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
     #wrapper{
         justify-content: space-around;
     }
@@ -287,5 +287,6 @@
     .thumbnailDivHolder {
         height: 64%;
         padding: 5px;
+        margin-bottom: 2px;
     }
 }

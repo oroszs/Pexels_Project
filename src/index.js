@@ -4,6 +4,7 @@ import Modal from './components/modal.js';
 import Images from './components/images.js';
 import Pages from './components/pages.js';
 import Search from './components/search.js';
+import Pexels from './components/pexels.js';
 import getPhotos from './utils/service.js';
 
 class App extends React.Component {
@@ -91,7 +92,7 @@ class App extends React.Component {
                 <Images images={images? images : null} currentPage={currentPage} getImageInfo={this.getImageInfo}/>
                 <Pages numOfImages={images? images.length : 0} pageClick={this.pageClick} currentPage={currentPage}/>
                 <Search callApi={this.callApi} resetPageNumber={this.resetPageNumber}/>
-
+                <Pexels />
             </div>
         );
     }
