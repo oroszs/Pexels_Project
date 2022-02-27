@@ -10,20 +10,32 @@ class Modal extends React.Component{
         this.props.setScrollPosition();
     }
 
-    modal(){
+    modal(imageObj){
+        let imageLink = imageObj.url;
+        let imageArtistLink = imageObj.photographer_url;
+        let imageArtist = imageObj.photographer;
         return (
             <div id='modalBG' onClick={() => this.hideModal()}>
                 <Loading />
+                <div id='modalDiv'>
+                    <span id='modalLinkSpan'>This&nbsp;
+                        <a className='modalLink' href={imageLink} target='_blank' onClick={(e)=>{e.stopPropagation()}}>Photo</a> 
+                        &nbsp;was taken by&nbsp; 
+                        <a className='modalLink' href={imageArtistLink} target='_blank' onClick={(e)=>{e.stopPropagation()}}>{imageArtist}</a> 
+                        &nbsp;on Pexels
+                    </span>
+                </div>
             </div>
         );
     }
 
     componentDidUpdate() {
         let imageObj = this.props.imageObj;
-        let modalBG = document.querySelector('#modalBG');
-        let loadingDiv = document.querySelector('#loadingDiv');
-        let loadTime, startTime, endTime, date;
         if(imageObj){
+            let modalSrc = imageObj.src.original;
+            let modalDiv = document.querySelector('#modalDiv');
+            let loadingDiv = document.querySelector('#loadingDiv');
+            let loadTime, startTime, endTime, date;
             const waitForImageLoad = (src) => {
                 date = new Date();
                 startTime = date.getTime();
@@ -34,23 +46,21 @@ class Modal extends React.Component{
                     image.src = src;
                 });
             }
-            let modalSrc = imageObj.src.original;
             waitForImageLoad(modalSrc).then((img) => {
                 img.className = 'modal';
+                modalDiv.prepend(img);
                 date = new Date();
                 endTime = date.getTime();
                 loadingDiv.className += ' fadeOut';
                 loadTime = (endTime - startTime) / 1000;
                 console.log(`Loaded in ${loadTime} Seconds`);
-                modalBG.appendChild(img);
                 setTimeout(() => {                
-                    img.style.display = 'block';
-                    img.className += ' fadeIn';
+                    modalDiv.style.display = 'flex';
+                    modalDiv.className += ' fadeIn';
                 }, 300);
             });
         }
     }
-
 
     render(){
         let imageObj = this.props.imageObj;

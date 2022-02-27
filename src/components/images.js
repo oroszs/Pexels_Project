@@ -36,7 +36,6 @@ class Images extends React.Component {
                 <div className='fadeIn thumbnailDivHolder componentDiv'><h2>No Results Found...</h2></div>
             );
         }
-
     }
 
     render() {

@@ -12,6 +12,7 @@
     justify-content: flex-end;
     padding: 10px;
     padding-bottom: 2%;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 #modalBG {
     display: flex;
@@ -48,7 +49,6 @@
     margin: auto;
     font-size: 18pt;
     color: white;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 #loadingIcon {
     position: relative;
@@ -92,14 +92,35 @@
 .fadeOut {
     animation: .3s ease-in 0s 1 forwards fadeOut;
 }
-.modal{
+#modalDiv {
+    z-index: 4;
     display: none;
+    flex: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.modal{
+    display: block;
     position: fixed;
     transform:translateZ(0);
     flex: none;
-    z-index: 4;
+    z-index: 5;
     border-radius: 10px;
     border: white solid 15px;
+}
+#modalLinkSpan {
+    background-color: white;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 2%;
+    padding: 5px;
+    display: block;
+    z-index: 6;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.modalLink {
+    color: black;
 }
 .componentDiv{
     background-color: white;
@@ -156,6 +177,7 @@
     border: none;
     border-radius: 5px;
     background-color: rgba(185, 185, 185, 0.2);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 #searchButton {
     color: black;
@@ -165,6 +187,7 @@
     height: 25px;
     cursor: pointer;
     border-radius: 5px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 .thumbnailDivHolder{
     width: 90vw;
@@ -235,6 +258,9 @@
         width: 85vw;
         height: auto;
     }
+    #modalLinkSpan{
+        font-size: 10pt;
+    }
 }
 @media screen and (max-width: 600px) {
     #wrapper{
@@ -264,14 +290,24 @@
         margin-top: 0px;
     }
 }
+@media screen and (max-height: 600px) {
+    #modalLinkSpan {
+        padding: 2px;
+        font-size: 8pt;
+        bottom: 5px;
+    }
+}
 @media screen and (max-height: 450px) {
+    .modal{
+        top: 2.5%;
+    }
     .thumbnailDiv {
         width: 200px;
         height: 200px;
         margin: 5px;
     }
     .componentDiv {
-        margin:  5px;
+        margin: 5px;
     }
     .searchDiv{
         height: 35px;
@@ -287,6 +323,5 @@
     .thumbnailDivHolder {
         height: 64%;
         padding: 5px;
-        margin-bottom: 2px;
     }
 }
