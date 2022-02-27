@@ -118,6 +118,9 @@
     display: block;
     z-index: 6;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
+    transform:translate(-50%, 0);
+    left: 50%;
+    width: fit-content;
 }
 .modalLink {
     color: black;
@@ -248,20 +251,6 @@
         height: 74vh;
     }
 }
-@media screen and (max-width: 500px) {
-    .searchDiv {
-        width: 90%;
-    }
-}
-@media screen and (max-width: 450px) {
-    #modal{
-        width: 85vw;
-        height: auto;
-    }
-    #modalLinkSpan{
-        font-size: 10pt;
-    }
-}
 @media screen and (max-width: 600px) {
     #wrapper{
         justify-content: space-around;
@@ -290,6 +279,21 @@
         margin-top: 0px;
     }
 }
+@media screen and (max-width: 500px) {
+    .searchDiv {
+        width: 90%;
+    }
+}
+@media screen and (max-width: 450px) {
+    #modal{
+        width: 85vw;
+        height: auto;
+    }
+    #modalLinkSpan{
+        font-size: 8pt;
+    }
+}
+
 @media screen and (max-height: 600px) {
     #modalLinkSpan {
         padding: 2px;
