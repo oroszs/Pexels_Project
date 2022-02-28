@@ -227,7 +227,7 @@
     object-fit: cover;
 }
 #pexelsIconDiv {
-    right: 2%;
+    left: 2%;
     bottom: 2%;
     position: absolute;
 }
@@ -312,7 +312,7 @@
         margin: 5px;
     }
     .componentDiv {
-        margin: 5px;
+        margin: 2.5px;
     }
     .searchDiv{
         height: 35px;
@@ -328,5 +328,7 @@
     .thumbnailDivHolder {
         height: 64%;
         padding: 5px;
+        padding-top: 0px;
+        padding-bottom: 25px;
     }
 }

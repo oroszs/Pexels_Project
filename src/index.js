@@ -39,14 +39,16 @@ class App extends React.Component {
         this.setState({
             images: undefined,        
         }, ()=> {
-            getPhotos(query).then(data => {
-                if(data) {
-                    let photos = data.photos;
-                    this.setState({
-                        images: photos,
-                    }, this.resetScrollPosition());
-                }
-            });
+            setTimeout(() => {
+                getPhotos(query).then(data => {
+                    if(data) {
+                        let photos = data.photos;
+                        this.setState({
+                            images: photos,
+                        }, this.resetScrollPosition());
+                    }
+                });
+            }, 0);
         });
     }
 
