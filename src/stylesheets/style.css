@@ -307,12 +307,12 @@
         top: 2.5%;
     }
     .thumbnailDiv {
-        width: 200px;
-        height: 200px;
+        width: 175px;
+        height: 175px;
         margin: 5px;
     }
     .componentDiv {
-        margin: 2.5px;
+        margin: 5px;
     }
     .searchDiv{
         height: 35px;
@@ -326,9 +326,9 @@
         line-height: 6vh;
     }
     .thumbnailDivHolder {
-        height: 64%;
+        width: 70vw;
+        height: 65%;
         padding: 5px;
         padding-top: 0px;
-        padding-bottom: 25px;
     }
 }
