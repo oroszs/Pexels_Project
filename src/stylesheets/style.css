@@ -110,6 +110,7 @@
     border: white solid 15px;
 }
 #modalLinkSpan {
+    flex: none;
     background-color: white;
     border-radius: 5px;
     position: absolute;
@@ -243,7 +244,7 @@
 @media (orientation: landscape) {
     .modal {
         width: auto;
-        height: 80%;
+        height: 70%;
     }
 }
 @media screen and (max-width: 1300px) {
@@ -291,14 +292,14 @@
     }
     #modalLinkSpan{
         font-size: 8pt;
+        bottom: 5%;
     }
 }
 
 @media screen and (max-height: 600px) {
     #modalLinkSpan {
-        padding: 2px;
-        font-size: 8pt;
-        bottom: 5px;
+        font-size: 10pt;
+        bottom: 5%;
     }
 }
 @media screen and (max-height: 450px) {

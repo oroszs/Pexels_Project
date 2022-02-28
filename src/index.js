@@ -36,13 +36,17 @@ class App extends React.Component {
     }
 
     callApi(query) {
-        getPhotos(query).then(data => {
-            if(data) {
-                let photos = data.photos;
-                this.setState({
-                    images: photos,
-                }, this.resetScrollPosition());
-            }
+        this.setState({
+            images: undefined,        
+        }, ()=> {
+            getPhotos(query).then(data => {
+                if(data) {
+                    let photos = data.photos;
+                    this.setState({
+                        images: photos,
+                    }, this.resetScrollPosition());
+                }
+            });
         });
     }
 

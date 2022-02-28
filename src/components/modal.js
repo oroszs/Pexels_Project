@@ -22,7 +22,8 @@ class Modal extends React.Component{
                         <a className='modalLink' href={imageLink} target='_blank' onClick={(e)=>{e.stopPropagation()}}>Photo</a> 
                         &nbsp;was taken by&nbsp; 
                         <a className='modalLink' href={imageArtistLink} target='_blank' onClick={(e)=>{e.stopPropagation()}}>{imageArtist}</a> 
-                        &nbsp;on Pexels
+                        &nbsp;on&nbsp;
+                        <a className='modalLink' href='https://www.pexels.com' target='_blank' onClick={(e)=>{e.stopPropagation()}}>Pexels</a>
                     </span>
                 </div>
             </div>
