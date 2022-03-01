@@ -267,6 +267,7 @@
         display: flex;
         justify-content: space-between;
         transform: translate(-50%, 0);
+        padding: 12px;
     }
     .thumbnailDivWrapper {
         padding: 12px;
