@@ -208,12 +208,12 @@
     padding: 10px;
 }
 .thumbnailDivWrapper {
+    flex: none;
     position: relative;
     margin: auto;
     padding: 10px;
 }
 .thumbnailDiv {
-    flex: none;
     width: 250px;
     height: 250px;
     position: relative;
@@ -252,7 +252,7 @@
         height: 74vh;
     }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 610px) {
     #wrapper{
         justify-content: space-around;
     }
@@ -267,7 +267,6 @@
         display: flex;
         justify-content: space-between;
         transform: translate(-50%, 0);
-        padding: 15px;
     }
     #paginateDiv{
         bottom: 6%;
