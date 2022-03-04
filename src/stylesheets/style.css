@@ -256,10 +256,13 @@
     #wrapper{
         justify-content: space-around;
     }
+    .thumbnailDivWrapper {
+        padding: 11px;
+    }
     .thumbnailDivHolder{
         position: relative;
-        width: calc(250px + 3vh);
-        height: calc(250px + 3vh);
+        width: 270px;
+        height: 270px;
         flex-wrap: nowrap;
         align-items: center;
         overflow: hidden;
@@ -267,9 +270,6 @@
         display: flex;
         justify-content: space-between;
         transform: translate(-50%, 0);
-    }
-    .thumbnailDivWrapper {
-        padding: 15px;
     }
     #paginateDiv{
         bottom: 6%;
@@ -304,7 +304,7 @@
         bottom: 5%;
     }
 }
-@media screen and (max-height: 450px) {
+@media screen and (max-height: 500px) {
     .modal{
         top: 2.5%;
     }
@@ -328,8 +328,9 @@
         line-height: 6vh;
     }
     .thumbnailDivHolder {
-        width: 70vw;
-        height: 65%;
+        top: 10px;
+        width: 410px;
+        height: 200px;
         padding: 5px;
         padding-top: 0px;
     }
