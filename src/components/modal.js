@@ -19,11 +19,11 @@ class Modal extends React.Component{
                 <Loading />
                 <div id='modalDiv'>
                     <span id='modalLinkSpan'>This&nbsp;
-                        <a className='modalLink' href={imageLink} target='_blank' onClick={(e)=>{e.stopPropagation()}}>Photo</a> 
+                        <a className='modalLink' href={imageLink} onClick={(e)=>{e.stopPropagation()}}>Photo</a> 
                         &nbsp;was taken by&nbsp; 
-                        <a className='modalLink' href={imageArtistLink} target='_blank' onClick={(e)=>{e.stopPropagation()}}>{imageArtist}</a> 
+                        <a className='modalLink' href={imageArtistLink} onClick={(e)=>{e.stopPropagation()}}>{imageArtist}</a> 
                         &nbsp;on&nbsp;
-                        <a className='modalLink' href='https://www.pexels.com' target='_blank' onClick={(e)=>{e.stopPropagation()}}>Pexels</a>
+                        <a className='modalLink' href='https://www.pexels.com' onClick={(e)=>{e.stopPropagation()}}>Pexels</a>
                     </span>
                 </div>
             </div>

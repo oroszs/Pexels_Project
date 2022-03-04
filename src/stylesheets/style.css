@@ -257,19 +257,20 @@
         justify-content: space-around;
     }
     .thumbnailDivWrapper {
-        padding: 11px;
+        padding: 20px;
     }
     .thumbnailDivHolder{
+        padding: 0px;
         position: relative;
-        width: 270px;
-        height: 270px;
+        margin: auto;
+        width: 290px;
+        height: 290px;
         flex-wrap: nowrap;
         align-items: center;
         overflow: hidden;
         overflow-x: auto;
         display: flex;
         justify-content: space-between;
-        transform: translate(-50%, 0);
     }
     #paginateDiv{
         bottom: 6%;
@@ -313,9 +314,6 @@
         height: 175px;
         margin: 5px;
     }
-    .componentDiv {
-        margin: 5px;
-    }
     .searchDiv{
         height: 35px;
     }
@@ -327,8 +325,11 @@
         height: 6vh;
         line-height: 6vh;
     }
+    .componentDiv {
+        margin-top: 10px;
+    }
     .thumbnailDivHolder {
-        top: 10px;
+        margin-top: 2px;
         width: 410px;
         height: 200px;
         padding: 5px;
