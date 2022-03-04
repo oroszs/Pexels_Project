@@ -8,7 +8,7 @@ const getPhotos = async (query) => {
                 Authorization: process.env.REACT_APP_API_KEY,
             }
         });
-        if(response.status == 200) {
+        if(response.status === 200) {
             let jsonObj = await response.json();
             return jsonObj;
         } else {

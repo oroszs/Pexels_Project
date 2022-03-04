@@ -1,9 +1,6 @@
 import React from 'react';
 
 class Pages extends React.Component {
-    constructor(props) {
-        super (props);
-    }
 
     paginate() {
         let numOfPages = this.props.numOfImages / 10;

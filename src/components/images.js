@@ -3,9 +3,6 @@ import Loading from './loading.js';
 import '../stylesheets/style.css';
 
 class Images extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     arrangePhotos(){
         let currentPage = this.props.currentPage;
@@ -22,7 +19,7 @@ class Images extends React.Component {
                     imgTagArray.push(
                         <div key={imageIndex} className='thumbnailDivWrapper'>
                             <div className='thumbnailDiv' onClick={() => getImageInfo(imageObj[imageIndex])}>
-                                <img className='thumbnail' src={imageArray[imageIndex]} alt='Failed to load image...'></img>
+                                <img className='thumbnail' src={imageArray[imageIndex]} alt='Failed to load...'></img>
                             </div>
                         </div>
                     );
