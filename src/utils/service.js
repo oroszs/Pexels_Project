@@ -1,7 +1,9 @@
 const getPhotos = async (query) => {
-    let endpoint = (query === undefined) ? 
-    `https://api.pexels.com/v1/curated?per_page=50`:
-    `https://api.pexels.com/v1/search?query=${query}&per_page=50`;
+    
+    const endpoint = query ? 
+    `https://api.pexels.com/v1/search?query=${query}&per_page=50`:
+    `https://api.pexels.com/v1/curated?per_page=50`;
+    
     try{
         let response = await fetch(endpoint, {
             headers: {
