@@ -4,14 +4,11 @@ class Pages extends React.Component {
 
     paginate() {
         const numOfPages = this.props.numOfImages / 10;
-        const pageNums = [];
         const currentPage = this.props.currentPage;
-        for(let page = 1; page < numOfPages + 1; page++) {
-            pageNums.push(
-                <div className={page !== currentPage ? 'activePageNumber pageNumber' : 'inactivePageNumber pageNumber'} key={page} onClick={() => this.props.pageClick(page)}>{page}</div>
-            );
-        }
-        return pageNums;
+        return [...Array(numOfPages)].map((value, pageIndex) => {
+            const page = pageIndex + 1;
+            return  <div className={page !== currentPage ? 'activePageNumber pageNumber' : 'inactivePageNumber pageNumber'} key={page} onClick={() => this.props.pageClick(page)}>{page}</div>
+        })
     }
 
     render() {
