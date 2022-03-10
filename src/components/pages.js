@@ -3,9 +3,13 @@ import React from 'react';
 class Pages extends React.Component {
 
     paginate() {
+        // 
+        // Are you actually setting these lets to new values? Would this code still work if you made them const?
         let numOfPages = this.props.numOfImages / 10;
         let pageNums = [];
         let currentPage = this.props.currentPage;
+        //
+        //
         for(let page = 1; page < numOfPages + 1; page++) {
             pageNums.push(
                 <div className={page !== currentPage ? 'activePageNumber pageNumber' : 'inactivePageNumber pageNumber'} key={page} onClick={() => this.props.pageClick(page)}>{page}</div>
