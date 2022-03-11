@@ -1,7 +1,7 @@
 const getPhotos = async (query) => {
     
     const endpoint = query ? 
-    `https://api.pexels.com/v1/search?query=${query}&per_page=50`:
+    `https://api.pexels.com/v1/search?query=${query.toString()}&per_page=50`:
     `https://api.pexels.com/v1/curated?per_page=50`;
     
     try{

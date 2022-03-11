@@ -3,7 +3,7 @@ import React from 'react';
 class Pages extends React.Component {
 
     paginate() {
-        const numOfPages = this.props.numOfImages / 10;
+        const numOfPages = parseInt(this.props.numOfImages / 10);
         const currentPage = this.props.currentPage;
         return [...Array(numOfPages)].map((value, pageIndex) => {
             const page = pageIndex + 1;
