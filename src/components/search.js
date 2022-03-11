@@ -11,7 +11,7 @@ class Search extends React.Component {
     search(){
         const callApi = this.props.callApi;
         const searchTextElement = document.querySelector('#searchTextInput');
-        const regEx = /[^A-Za-z]/;
+        const regEx = /[^A-Za-z" "]/;
         let invalidSearchTextBool = regEx.test(searchTextElement.value);
         if(invalidSearchTextBool) {
             const invalidDiv = document.createElement('div');
