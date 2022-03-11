@@ -11,9 +11,24 @@ class Search extends React.Component {
     search(){
         const callApi = this.props.callApi;
         const searchTextElement = document.querySelector('#searchTextInput');
-        callApi(searchTextElement.value);
-        searchTextElement.value = '';
-        this.props.resetPageNumber();
+        const regEx = /[^A-Za-z]/;
+        let invalidSearchTextBool = regEx.test(searchTextElement.value);
+        if(invalidSearchTextBool) {
+            const invalidDiv = document.createElement('div');
+            invalidDiv.textContent = 'Invalid Search';
+            invalidDiv.id = 'invalidSearchDiv';
+            invalidDiv.className = 'slowFadeOut';
+            const wrapper = document.querySelector('#searchWrapper');
+            wrapper.prepend(invalidDiv);
+            setTimeout( () => {
+                invalidDiv.remove();
+            }, 2100);
+            searchTextElement.value = '';
+        } else {
+            callApi(searchTextElement.value);
+            searchTextElement.value = '';
+            this.props.resetPageNumber();
+        }
     }
 
     searchWithEnterKey(keyCode) {
@@ -27,9 +42,11 @@ class Search extends React.Component {
 
     render() {
         return (
-            <div className='componentDiv searchDiv'>
-                <input type='text' placeholder='Enter Keyword' id='searchTextInput'></input>
-                <button id='searchButton' onClick={() => this.search()}>Search</button>
+            <div id='searchWrapper'>
+                <div className='componentDiv searchDiv'>
+                    <input type='text' placeholder='Enter Keyword' id='searchTextInput'></input>
+                    <button id='searchButton' onClick={() => this.search()}>Search</button>
+                </div>
             </div>
         );
     }

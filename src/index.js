@@ -90,13 +90,14 @@ class App extends React.Component {
 
     render() {
         let images = this.state.images;
+        let pages = parseInt(images / 10);
         let currentPage = this.state.currentPage;
         let imageObj = this.state.imageObj;
         return (
             <div id='wrapper'>
                 <Modal imageObj={imageObj? imageObj : undefined} getImageInfo={this.getImageInfo} setScrollPosition={this.setScrollPosition}/>
                 <Images images={images? images : null} currentPage={currentPage} getImageInfo={this.getImageInfo}/>
-                <Pages numOfImages={images? images.length : 0} pageClick={this.pageClick} currentPage={currentPage}/>
+                <Pages numOfPages={images? pages : 0} pageClick={this.pageClick} currentPage={currentPage}/>
                 <Search callApi={this.callApi} resetPageNumber={this.resetPageNumber}/>
                 <Pexels />
             </div>

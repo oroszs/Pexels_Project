@@ -3,7 +3,7 @@ import React from 'react';
 class Pages extends React.Component {
 
     paginate() {
-        const numOfPages = parseInt(this.props.numOfImages / 10);
+        const numOfPages = this.props.numOfPages;
         const currentPage = this.props.currentPage;
         return [...Array(numOfPages)].map((value, pageIndex) => {
             const page = pageIndex + 1;
@@ -12,10 +12,10 @@ class Pages extends React.Component {
     }
 
     render() {
-        const numOfImages = this.props.numOfImages;
+        const numOfPages = this.props.numOfPages;
         return (
             <div>
-                {numOfImages > 0 ? <div id='paginateDiv' className='componentDiv'>{this.paginate()}</div> : null}
+                {numOfPages > 0 ? <div id='paginateDiv' className='componentDiv'>{this.paginate()}</div> : null}
             </div>
         );
     }
