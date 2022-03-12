@@ -90,7 +90,10 @@ class App extends React.Component {
 
     render() {
         let images = this.state.images;
-        let pages = parseInt(images / 10);
+        let pages = 0;
+        if(images) {
+            pages = parseInt(images.length / 10);
+        }
         let currentPage = this.state.currentPage;
         let imageObj = this.state.imageObj;
         return (
